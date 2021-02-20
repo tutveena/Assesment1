@@ -1,0 +1,51 @@
+package Pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import BaseClass.BaseClass;
+
+public class HomePage extends BaseClass {
+	
+	public RemoteWebDriver driver;
+	public HomePage(RemoteWebDriver driver)
+	{
+		
+			this.driver=driver;
+
+		}
+
+	public void clickToggleButton()
+	
+	{	waitUntilVisibility(driver,"//div[@class='slds-icon-waffle']");
+		click(getWebElement("xpath=//div[@class='slds-icon-waffle']"));
+	}
+	
+public void clickViewAll(String locator)
+	
+	{
+	waitUntilVisibility(driver,"//button[text()='View All']");
+	click(getWebElement("xpath=//button[text()='View All']"));
+	}
+public void clickSales(String locator)
+
+{
+	driver.findElement(By.xpath(locator)).click();
+}
+
+public  void waitUntilVisibility(WebDriver driver, String ele)
+{
+	
+	
+	WebDriverWait wait = new WebDriverWait(driver,500);
+	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(ele)));
+	
+	
+	
+}
+}
+
+

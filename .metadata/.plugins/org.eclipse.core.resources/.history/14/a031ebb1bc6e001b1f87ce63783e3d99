@@ -1,0 +1,36 @@
+package StepDefinition;
+
+import Pages.Hooks;
+import Pages.LoginPage;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.When;
+
+public class TestAssesmentSteps extends Hooks {
+	
+	@Given ("Launch the application")
+	public void Test()
+	{
+		open("https://login.salesforce.com");
+	}
+	@And ("Enter username as 'makaia@testleaf.com'")
+	
+	public void LoginEnterUsername()
+	{
+		new LoginPage(driver).enterUserName("makaia@testleaf.com");
+		
+	}
+	@And ("Enter password as 'Bootcamp@123'")
+	public void loginEnterPassword()
+	{
+		new LoginPage(driver).enterPassword("Bootcamp@123");
+	}
+	@When ("Click login button")
+	public void LoginButton()
+	{
+		new LoginPage(driver).clickLoginButton();
+	}
+	
+	
+
+}

@@ -1,0 +1,9 @@
+Feature: SalesForce Report functionality
+
+Scenario: TC001_ User logins in with valid credential
+
+Given Launch the application
+And Enter username as 'makaia@testleaf.com'
+And Enter password as 'Bootcamp@123'
+When Click login button
+Then HomePage should be displayed

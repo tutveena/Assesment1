@@ -1,0 +1,22 @@
+package Pages;
+
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+import SeleniumBaseClass.BaseClass;
+
+public class ReportBuilderPage extends BaseClass {
+
+	public RemoteWebDriver driver;
+	public  ReportBuilderPage (RemoteWebDriver driver)
+	
+	{
+		this.driver=driver;
+	}
+
+	public ReportBuilderPage clickAllTimeFromReportFilter()
+	{
+		click(getWebElement("xpath=//div[text()='All Time']"));
+		return this;
+	}
+	
+}

@@ -1,0 +1,68 @@
+package Pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import BaseClass.BaseClass;
+
+public class Payments extends BaseClass {
+	
+	public RemoteWebDriver driver;
+	public Payments(RemoteWebDriver driver)
+	{
+		this.driver=driver;
+	}
+	
+	public Payments clickRecentlyViewed()
+	{
+		waitUntilVisibility(driver,"//a[@title='Select List View']");
+		click(getWebElement("xpath=//a[@title='Select List View']"));
+		return this;
+		
+	}
+	
+	public Payments clickAll()
+	
+	{
+		waitUntilVisibility(driver,"//span[text()='All']");
+		click(getWebElement("xpath=//span[text()='All']"));
+		return this;
+		
+	}
+	
+	public Payments clickFilter()
+	{
+		waitUntilVisibility(driver,"//button[@title='Hide filters']//lightning-primitive-icon[1]");
+		click(getWebElement("xpath=//button[@title='Hide filters']//lightning-primitive-icon[1]"));
+		return this;
+	}
+	
+	public Payments clickRemoveAll()
+	
+	{
+		waitUntilVisibility(driver,"//a[@class='removeAll']");
+		click(getWebElement("xpath=//a[@class='removeAll']"));
+		return this;
+	}
+	
+	public Payments clickSaveButton()
+	{
+		click(getWebElement("xpath=//button[text()='Save']"));
+		return this;
+	}
+	public  void waitUntilVisibility(WebDriver driver, String ele)
+	{
+		
+		
+		@SuppressWarnings("deprecation")
+		WebDriverWait wait = new WebDriverWait(driver,500);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(ele)));
+		
+		
+		
+	}
+
+}

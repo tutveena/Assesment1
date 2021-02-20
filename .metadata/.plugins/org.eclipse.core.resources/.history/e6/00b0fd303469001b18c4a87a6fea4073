@@ -1,0 +1,40 @@
+package Pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+import BaseClass.BaseClass;
+
+public class LoginPage extends BaseClass {
+	
+	
+
+	
+	
+	
+	
+	public LoginPage enterUserName(String uName)
+	
+	{
+		type(getWebElement("id=username"), uName);
+		return this;
+			
+			}
+	
+public LoginPage enterPassword(String pName)
+	
+	{
+		type(getWebElement("id=password"), pName);
+		return this;
+			
+		
+	}
+public HomePage clickLoginButton()
+{
+	click(getWebElement("id=Login"));
+	return HomePage;
+}
+
+
+}

@@ -1,0 +1,118 @@
+package Salesforce;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+
+public class CreateCampaign {
+
+	
+	public static void main(String[] args) throws InterruptedException {
+
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\tutve\\Downloads\\chromedriver_win32\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://login.salesforce.com");
+		driver.findElement(By.id("username")).sendKeys("makaia@testleaf.com");
+		driver.findElement(By.id("password")).sendKeys("Bootcamp@123");
+		driver.findElement(By.id("Login")).click();
+		Thread.sleep(15000);
+		//clicking on toggle button on leftside
+		driver.findElement(By.className("slds-icon-waffle")).click();
+		Thread.sleep(5000);
+		//clicking on viewall 
+		driver.findElement(By.xpath("//button[text()='View All']")).click();
+		Thread.sleep(5000);
+		//clicking on sales from app launcher
+		driver.findElement(By.xpath("//p[text()='Sales']")).click();
+		Thread.sleep(8000);
+		
+		//Clicking on Campaigns
+		WebElement element = driver.findElement(By.xpath("//span[text()='Campaigns']"));
+		JavascriptExecutor executor = (JavascriptExecutor)driver;
+		executor.executeScript("arguments[0].click();", element);
+		//clicking on New campaign
+		Thread.sleep(10000);
+	driver.findElement(By.xpath("//div[@title='New']")).click();
+	Thread.sleep(3000);
+	//entering campaign name
+	String name1 = "bootcamp";
+	driver.findElement(By.xpath("//input[contains(@maxlength,'80')]")).sendKeys(name1);
+	Thread.sleep(3000);
+	System.out.println(name1);
+	
+	//Select date
+	driver.findElement(By.xpath("//a[contains(@class,'datePicker-openIcon display')][1]")).click();
+	driver.findElement(By.xpath("//table[@class='calGrid']//span[contains(@class,'selectedDate ')]/following::span[1]")).click();
+		
+	
+	
+	
+	
+	
+ 
+//select date
+	
+	//enter tomorrow's date in the field 
+	driver.findElement(By.xpath("//a[contains(@class,'datePicker-openIcon display')][1]")).click();
+	//String String1 = driver.findElement(By.xpath("//span[contains(@class,'slds-day weekday selectedDate DESKTOP uiDayInMonthCell--default')]"))+TmrwAsString;
+	
+	
+	WebElement TmrwString1= driver.findElement(By.xpath("//a[contains(@class,'datePicker-openIcon display')][1]"));
+	Calendar calendar = Calendar.getInstance();
+	Date tomorrow = calendar.getTime();
+	DateFormat dateformat = new SimpleDateFormat("01/01/2021");
+	String TmrwAsString = dateformat.format(tomorrow);
+	
+	SelectDateByJS(driver,TmrwString1, TmrwAsString );
+	
+	//	Date dt= new Date();
+//
+//	Calendar calendar = Calendar.getInstance();
+//	Date today = calendar.getTime();
+//	
+//	
+//	
+//	calendar.add(Calendar.DAY_OF_YEAR, 1);
+//	Date tomorrow = calendar.getTime();
+//	DateFormat dateformat = new SimpleDateFormat("MM/dd/yyyy");
+//	String TodayAsString = dateformat.format(today);
+//	String TmrwAsString = dateformat.format(tomorrow);
+//	Thread.sleep(3000);
+//	
+//	System.out.println(TodayAsString);
+//	System.out.println(TmrwAsString);
+//	//String1.compareTo(TmrwAsString);
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	}
+
+	
+	public static void SelectDateByJS(WebDriver driver,WebElement element, String dateval)
+	{
+		JavascriptExecutor js = ((JavascriptExecutor)driver);
+		js.executeScript("arguments[0].setAttribute('data-datevalue','"+dateval+"');", element);
+
+}
+}

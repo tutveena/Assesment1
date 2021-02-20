@@ -1,0 +1,47 @@
+package Pages;
+
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+import SeleniumBaseClass.BaseClass;
+
+public class ReportsPage extends BaseClass{
+	
+	public RemoteWebDriver driver;
+	public ReportsPage (RemoteWebDriver driver)
+	
+	{
+		this.driver=driver;
+	}
+
+	public ReportsPage clickReports()
+	{
+		click(getWebElement("xpath=//a[@title='Reports']"));
+		return this;
+	}
+	
+	public ReportsPage clickNewReportSalesForceClassic()
+	
+	{
+		click(getWebElement("xpath=//div[@title='New Report (Salesforce Classic)']"));
+		return this;
+		
+	}
+	
+	public ReportsPage clickLeads()
+	{
+		click(getWebElement("xpath=//span[text()='Leads']"));
+
+		return this;
+		
+	}
+	
+	public ReportsPage clickCreateButton()
+	{
+		click(getWebElement("id=thePage:rtForm:createButton"));
+
+		return this;
+		
+	}
+	
+	
+}

@@ -1,0 +1,14 @@
+package Pages;
+
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+public class Services {
+	
+	public RemoteWebDriver driver;
+	public Services (RemoteWebDriver driver)
+	
+	{
+		this.driver=driver;
+	}
+
+}

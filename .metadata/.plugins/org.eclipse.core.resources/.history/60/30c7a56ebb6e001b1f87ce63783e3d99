@@ -1,0 +1,27 @@
+package StepDefinition;
+
+import Pages.Hooks;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+
+public class TestAssesmentSteps extends Hooks {
+	
+	@Given ("Launch the application")
+	public void open()
+	{
+		open("https://login.salesforce.com");
+	}
+	@And ("Enter username as 'makaia@testleaf.com'")
+	public void Login()
+	{
+		enterUserName
+	}
+	
+	
+	
+	
+	
+	
+	
+
+}

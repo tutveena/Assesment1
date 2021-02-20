@@ -1,0 +1,40 @@
+package Pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+import BaseClass.BaseClass;
+
+public class LoginPage extends BaseClass {
+	
+	
+	
+	public void openurl() 
+	
+	{
+		open("https://login.salesforce.com");
+	}
+	
+	public void enterUserName(String uName)
+	
+	{
+		type(getWebElement("id=username"), uName);
+		
+			
+			}
+	
+public void enterPassword(String pName)
+	
+	{
+		type(getWebElement("id=password"), pName);
+		
+			
+		
+	}
+public void clickLoginButton()
+{
+	click(getWebElement("id=Login"));
+}
+
+
+}

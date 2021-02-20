@@ -1,0 +1,35 @@
+package Pages;
+
+import java.util.List;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+import SeleniumBaseClass.BaseClass;
+
+public class ReportBuilderPage extends BaseClass {
+
+	public RemoteWebDriver driver;
+	public  ReportBuilderPage (RemoteWebDriver driver)
+	
+	{
+		this.driver=driver;
+	}
+
+	public ReportBuilderPage clickAllTimeFromReportFilter()
+	{
+		List<WebElement> Text =getWebElements("xpath=//div[text()='All Time']");
+		int s = Text.size();
+		System.out.println(s);
+		
+		for (int j=0;j<Text.size();j++)
+			
+			 if( Text.get(j).getText().equals("All Time")){
+		            Text.get(j).click();
+		            break;
+		
+	}
+		return this;
+	
+}
+}

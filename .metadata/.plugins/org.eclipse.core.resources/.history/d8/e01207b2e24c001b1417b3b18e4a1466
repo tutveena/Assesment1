@@ -1,0 +1,32 @@
+package Salesforce;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class NewOpportunityForCampaign {
+
+	public static void main(String[] args) throws InterruptedException {
+		
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\tutve\\Downloads\\chromedriver_win32\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://login.salesforce.com");
+		driver.findElement(By.id("username")).sendKeys("makaia@testleaf.com");
+		driver.findElement(By.id("password")).sendKeys("Bootcamp@123");
+		driver.findElement(By.id("Login")).click();
+		Thread.sleep(10000);
+		//clicking on toggle button on leftside
+		driver.findElement(By.className("slds-icon-waffle")).click();
+		Thread.sleep(5000);
+		//clicking on viewall 
+		driver.findElement(By.xpath("//button[text()='View All']")).click();
+		Thread.sleep(5000);
+		//clicking on sales from app launcher
+		driver.findElement(By.xpath("//p[text()='Sales']")).click();
+		Thread.sleep(8000);
+		
+
+	}
+
+}

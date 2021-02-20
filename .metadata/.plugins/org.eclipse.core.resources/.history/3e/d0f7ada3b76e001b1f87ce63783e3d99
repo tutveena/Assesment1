@@ -1,0 +1,22 @@
+package StepDefinition;
+
+import Pages.Hooks;
+
+import io.cucumber.java.en.Given;
+
+public class TestAssesmentSteps extends Hooks {
+	
+	@Given("Launch the application")
+	
+	{
+		open("https://login.salesforce.com");
+	}
+	
+	
+	
+	
+	
+	
+	
+
+}

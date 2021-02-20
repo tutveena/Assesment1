@@ -1,0 +1,19 @@
+package Pages;
+
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+public class ServicesPage {
+	
+	public RemoteWebDriver driver;
+	public ServicesPage (RemoteWebDriver driver)
+	
+	{
+		this.driver=driver;
+	}
+
+	public ServicesPage clickReports()
+	{
+		
+		return this;
+	}
+}

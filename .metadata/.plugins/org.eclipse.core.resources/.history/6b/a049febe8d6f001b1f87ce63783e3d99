@@ -1,0 +1,49 @@
+package Pages;
+
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+import SeleniumBaseClass.BaseClass;
+
+public class ReportsPage extends BaseClass{
+	
+	public RemoteWebDriver driver;
+	public ReportsPage (RemoteWebDriver driver)
+	
+	{
+		this.driver=driver;
+	}
+
+	public ReportsPage clickReports()
+	{
+		click(getWebElement("xpath=//a[@title='Reports']"));
+		return this;
+	}
+	
+	public ReportsPage clickNewReportSalesForceClassic()
+	
+	{	waitUntilVisibility(driver, "//div[@title='New Report']//following::div[1]");
+		click(getWebElement("xpath=//div[@title='New Report']//following::div[1]"));
+		return this;
+		
+	}
+	
+	public ReportsPage clickLeads()
+	{
+		waitUntilVisibility(driver, "//span[text()='Leads']/parent::a[1]");
+		
+		click(getWebElement("xpath=//span[text()='Leads']/parent::a[1]"));
+
+		return this;
+		
+	}
+	
+	public ReportsPage clickCreateButton()
+	{	waitUntilVisibility(driver, "thePage:rtForm:createButton");
+		click(getWebElement("id=thePage:rtForm:createButton"));
+
+		return this;
+		
+	}
+	
+	
+}

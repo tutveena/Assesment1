@@ -1,0 +1,19 @@
+package Pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+import BaseClass.BaseClass;
+
+public class LoginPage extends BaseClass {
+	
+	WebDriver driver;
+	
+	public void open(String aut) 
+	
+	{
+		driver.get("https://login.salesforce.com");
+	}
+	
+}
+

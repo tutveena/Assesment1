@@ -1,0 +1,22 @@
+Feature: SalesForce Report functionality
+
+Scenario: TC001_ User logins in with valid credential
+
+Given Launch the application
+And Enter username as 'makaia@testleaf.com'
+And Enter password as 'Bootcamp@123'
+When Click login button
+Then HomePage should be displayed
+
+Scenario: TC002_User is able to download lead report image
+Given User is in Home Page
+When  Click on App Launcher
+And click on ViewAll
+And Click on Services
+And Click on Reports
+And Click on  New Report(SalesForce Classic) 
+And Click on Leads
+Then download the Lead Report Image on the Right side and click on Create
+
+
+

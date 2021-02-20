@@ -1,0 +1,23 @@
+package Pages;
+
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+import SeleniumBaseClass.BaseClass;
+
+public class ServicesPage extends BaseClass{
+	
+	public RemoteWebDriver driver;
+	public ServicesPage (RemoteWebDriver driver)
+	
+	{
+		this.driver=driver;
+	}
+
+	public ServicesPage clickReports()
+	{
+		click(getWebElement("xpath=//a[@title='Reports']"));
+		return this;
+	}
+	
+	
+}

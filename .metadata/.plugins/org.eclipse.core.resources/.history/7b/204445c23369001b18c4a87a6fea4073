@@ -1,0 +1,23 @@
+package Pages;
+
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+
+import BaseClass.BaseClass;
+
+public class ProjectSpecific extends BaseClass{
+	
+	@BeforeMethod
+	public void openBrowser()
+	{
+		launchBrowser();
+	}
+
+	@AfterMethod
+	
+	public void closeBrowser()
+	{
+		closeBrowser();
+		
+	}
+}

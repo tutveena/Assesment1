@@ -1,0 +1,24 @@
+package TestScripts;
+
+import org.testng.annotations.Test;
+
+
+import Pages.LoginPage;
+import Pages.ProjectSpecific;
+
+public class TestScript001 extends ProjectSpecific{
+	
+	@Test
+	public void Test01Campaign()
+	{
+		new LoginPage()
+		.openurl();
+		.enterUserName("makaia@testleaf.com")
+		.enterPassword("Bootcamp@123")
+		.clickLoginButton();
+
+	}
+	
+	
+
+}

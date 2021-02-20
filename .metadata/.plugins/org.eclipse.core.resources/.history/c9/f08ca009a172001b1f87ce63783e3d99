@@ -1,0 +1,50 @@
+package Pages;
+
+import java.util.List;
+
+import org.apache.poi.util.SystemOutLogger;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+import SeleniumBaseClass.BaseClass;
+
+public class ReportBuilderPage extends BaseClass {
+
+	public RemoteWebDriver driver;
+	public  ReportBuilderPage (RemoteWebDriver driver)
+	
+	{
+		this.driver=driver;
+	}
+
+	public ReportBuilderPage clickAllTimeFromReportFilter()
+	{
+		List<WebElement> Text =getWebElements("id=duration-ext-gen17");
+		int s = Text.size();
+		System.out.println(s);
+		
+		for (int j=0;j<Text.size();j++)
+			
+			 if( Text.get(j).getText().equals("All Time")){
+		            Text.get(j).click();
+		            break;
+		
+	}
+		return this;
+	
+}
+	public ReportBuilderPage getCompanyDetails()
+	{
+		List<WebElement> companyName=getWebElements("xpath=//div[@class='x-grid3-cell-inner x-grid3-col-COMPANY']");
+		System.out.println(companyName);
+		return this;
+		
+		
+	}
+	
+	public ReportBuilderPage getGrandTotalOfRecords()
+	{
+		getWebElement("xpath=//div[@class='x-grid3-cell-inner']//b[1]");
+		return this;
+	}
+}
